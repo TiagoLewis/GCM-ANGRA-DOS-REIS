@@ -96,6 +96,8 @@ h2.h{font-size:clamp(36px,4.6vw,62px)}
 .hero .logo .bdg{width:34px;height:auto;aspect-ratio:3/4;filter:drop-shadow(0 4px 10px rgba(0,0,0,.6))}
 .hero h1{font-size:clamp(40px,5.8vw,90px);font-weight:500;letter-spacing:-.052em;line-height:.98;max-width:1150px;margin:0 auto 26px;text-wrap:balance}
 .hero h1 .gr{padding-bottom:.06em}
+.hero h1 .ln{display:block;white-space:nowrap}
+@media (max-width:900px){.hero h1{font-size:min(8.1vw,64px);line-height:1.04}}
 .hero .p{max-width:800px;margin:0 auto 36px;color:#c4c6cf;font-size:clamp(18px,1.75vw,23px);line-height:1.4}
 .hero .cta{display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap}
 .hero .photo{position:relative;z-index:1;width:min(100%,1800px);margin:calc(min(100vw,1800px) * -.235) auto 0;aspect-ratio:1920/1446;pointer-events:none}
@@ -496,7 +498,7 @@ blockquote.q{position:relative;padding:20px 22px 20px 26px;border-left:3px solid
       <span class="logo"><svg class="bdg" viewBox="0 0 300 400" role="img" aria-label="Distintivo da Guarda Civil Municipal de Angra dos Reis"><use href="#gcm-badge"/></svg>GCM Angra dos Reis</span>
       <span class="pill"><i class="dot"></i><b>Urgente</b> · Banca IDIB contratada</span>
     </div>
-    <h1 class="hin a2">A banca foi contratada. <span class="gr glitch" data-t="Sua farda na GCM Angra">Sua farda na GCM Angra</span> começa agora.</h1>
+    <h1 class="hin a2"><span class="ln">A banca foi contratada.</span> <span class="ln"><span class="gr glitch" data-t="Sua farda na GCM Angra">Sua farda na GCM Angra</span></span> <span class="ln">começa agora.</span></h1>
     <p class="p hin a3">O <b>1º concurso da história</b> da Guarda Civil Municipal de Angra dos Reis vem aí: <b>nível médio</b>, <b>sem limite de idade</b> e <b>R$&nbsp;5.033,95</b> de remuneração inicial. Largue na frente antes do edital sair.</p>
     <div class="cta hin a4">
       <a class="btn big js-cta js-btn" href="#oferta"><span class="shine"></span>Quero minha vaga na GCM <svg><use href="#arr"/></svg></a>
