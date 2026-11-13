@@ -508,6 +508,18 @@ details p{padding:0 22px 20px;color:var(--pmut);font-size:15px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','828102750053261');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=828102750053261&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
 </head>
 <body>
 
@@ -923,7 +935,6 @@ const APROVADOS = []; { let p=0; APROVADOS_GM.forEach((g,i)=>{ APROVADOS.push(g)
 
 /* Demonstrações da plataforma (img/videos) */
 const GIFS = [
-  {f:"aula-ismael.mp4", wide:1, tag:"Aulas gravadas e ao vivo", t:"Aulas com o Prof. Ismael", d:"Videoaulas direto ao ponto, gravadas para o concurso da GCM de Angra, com a teoria e as pegadinhas que a banca cobra. Assista no computador ou no celular."},
   {f:"02.mp4", tag:"Planejamento", t:"Plano de Estudos", d:"Escolha seu modo de estudo e receba um cronograma personalizado de acordo com o seu tempo, nível e objetivos."},
   {f:"03.mp4", tag:"Questões", t:"Banco de Questões", d:"Questões com comentários dos professores, no padrão das bancas de segurança pública."},
   {f:"04.mp4", tag:"Aulas + Revisão", t:"Aulas e Flashcards", d:"Assista às videoaulas e revise na hora com flashcards de repetição espaçada."},
@@ -1040,6 +1051,11 @@ const placeLogo=()=>{
 };
 $("#gcmLogo").addEventListener("load",placeLogo); $("#heroImg img").addEventListener("load",placeLogo);
 addEventListener("resize",placeLogo); setTimeout(placeLogo,300);
+
+/* Meta Pixel: eventos de clique */
+const px=(ev)=>{ try{ if(window.fbq) fbq('track',ev); }catch(e){} };
+$$('a[href*="pay.hub.la"]').forEach(a=>a.addEventListener('click',()=>px('InitiateCheckout')));
+$$('.js-wa').forEach(a=>a.addEventListener('click',()=>px('Contact')));
 
 /* toasts */
 const tbox=$("#toasts"); let ti=0;
