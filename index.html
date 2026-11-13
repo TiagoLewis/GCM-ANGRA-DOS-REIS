@@ -923,13 +923,14 @@ const APROVADOS = []; { let p=0; APROVADOS_GM.forEach((g,i)=>{ APROVADOS.push(g)
 
 /* Demonstrações da plataforma (img/videos) */
 const GIFS = [
+  {f:"aula-ismael.mp4", wide:1, tag:"Aulas gravadas e ao vivo", t:"Aulas com o Prof. Ismael", d:"Videoaulas direto ao ponto, gravadas para o concurso da GCM de Angra, com a teoria e as pegadinhas que a banca cobra. Assista no computador ou no celular."},
   {f:"02.mp4", tag:"Planejamento", t:"Plano de Estudos", d:"Escolha seu modo de estudo e receba um cronograma personalizado de acordo com o seu tempo, nível e objetivos."},
   {f:"03.mp4", tag:"Questões", t:"Banco de Questões", d:"Questões com comentários dos professores, no padrão das bancas de segurança pública."},
   {f:"04.mp4", tag:"Aulas + Revisão", t:"Aulas e Flashcards", d:"Assista às videoaulas e revise na hora com flashcards de repetição espaçada."},
   {f:"05.mp4", tag:"Mentoria", t:"Fale com o Mentor", d:"Envie suas dúvidas direto para a equipe de mentores e acompanhe todas as respostas."},
   {f:"06.mp4", tag:"Acompanhamento", t:"Painel de Desempenho", d:"Acertos, conteúdos concluídos e tempo de estudo: veja exatamente onde estão seus pontos fracos."},
   {f:"07.mp4", tag:"Gamificação", t:"Sistema de Pontuação", d:"Ganhe pontos a cada meta cumprida, suba de nível e mantenha a constância até a prova."},
-  {f:"08.mp4", tag:"Área de membros", t:"Tudo em um só lugar", d:"Cursos, plano de estudos, questões, flashcards e mentoria reunidos em uma plataforma só."}
+  {f:"08.mp4", wide:1, tag:"Área de membros", t:"Tudo em um só lugar", d:"Cursos, plano de estudos, questões, flashcards e mentoria reunidos em uma plataforma só."}
 ];
 
 const STEPS = [
@@ -963,7 +964,7 @@ const row = arr=>[...arr.slice(0,14),...arr.slice(0,14)].map(s=>`<img src="${s}"
 $("#platBg").innerHTML = `<div class="row">${row(APROVADOS)}</div><div class="row rev">${row([...APROVADOS].reverse())}</div>`;
 
 $("#gcards").innerHTML = GIFS.map((g,i)=>`
-  <article class="gcard rv ${i%2?'d1':''} ${i===GIFS.length-1&&GIFS.length%2?'wide':''}">
+  <article class="gcard rv ${i%2?'d1':''} ${g.wide?'wide':''}">
     <div class="gmedia"><video class="lv" data-src="img/videos/${g.f}" muted loop playsinline preload="none" aria-label="${g.t}"></video><span class="live">DEMONSTRAÇÃO</span></div>
     <div class="gbody"><div class="gmeta"><span>${g.tag}</span><span>${String(i+1).padStart(2,"0")} / ${String(GIFS.length).padStart(2,"0")}</span></div><h3>${g.t}</h3><p>${g.d}</p></div>
   </article>`).join("");
