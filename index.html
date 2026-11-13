@@ -482,13 +482,28 @@ details p{padding:0 22px 20px;color:var(--pmut);font-size:15px}
 .bigck{width:46px;height:46px;border-radius:14px;background:#1fae54;display:grid;place-items:center;flex:none;box-shadow:0 10px 24px -8px rgba(31,174,84,.7)}
 .bigck svg{width:24px;height:24px;color:#fff}
 /* ---------- DEPOIMENTOS ---------- */
-.depos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:46px}
-.depo{background:#fff;border:1px solid var(--pline);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:16px}
-.depo q{font-size:15.5px;color:var(--pink);line-height:1.5;quotes:"“" "”"}
-.depo .who{display:flex;gap:12px;align-items:center;margin-top:auto}
-.depo .who img{width:46px;height:46px;border-radius:50%;object-fit:cover}
-.depo .who b{display:block;font-size:15px}.depo .who small{color:#d0451a;font-weight:600;font-size:13px}
-.depo video{width:100%;border-radius:14px;aspect-ratio:9/16;object-fit:cover;background:#000}
+.dhead{text-align:center;margin-top:70px}
+.dhead h3{font-size:clamp(24px,3vw,36px);max-width:760px;margin:0 auto 10px}
+.dhead p{color:var(--pmut);max-width:620px;margin:0 auto}
+.dhead p b{color:var(--pink)}
+.depos{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:34px max(20px,calc((100vw - var(--max))/2 + 20px)) 14px;scrollbar-width:none}
+.depos::-webkit-scrollbar{display:none}
+.depo{flex:none;width:236px;scroll-snap-align:center;position:relative;border-radius:22px;overflow:hidden;background:#0b0c12;aspect-ratio:9/16;box-shadow:0 26px 50px -26px rgba(0,0,0,.55);cursor:pointer;isolation:isolate}
+.depo video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#0b0c12}
+.depo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,transparent 28%,transparent 58%,rgba(0,0,0,.85) 100%);pointer-events:none;transition:opacity .3s}
+.depo.playing::after{opacity:0}
+.depo .rec{position:absolute;left:12px;top:12px;z-index:2;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.12em;color:#fff;display:flex;gap:7px;align-items:center}
+.depo .rec::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red2);animation:pulse 1.6s infinite}
+.depo .idib{display:inline-block;margin-bottom:8px;background:var(--grad-btn);color:#1a0700;font-weight:800;font-size:10.5px;letter-spacing:.06em;padding:4px 9px;border-radius:999px}
+.depo .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.35);display:grid;place-items:center;transition:transform .3s,opacity .3s}
+.depo .play::before{content:"";margin-left:5px;border-left:18px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent}
+.depo:hover .play{transform:translate(-50%,-50%) scale(1.08)}
+.depo.playing .play,.depo.playing .cap,.depo.playing .rec,.depo.playing .idib{opacity:0;pointer-events:none}
+.depo .cap{position:absolute;left:14px;right:14px;bottom:14px;z-index:2;color:#fff;transition:opacity .3s}
+.depo .cap b{display:block;font-size:16px}
+.depo .cap small{color:var(--gold);font-weight:600;font-size:12.5px}
+.depo .cap .ouvir{display:inline-flex;gap:6px;align-items:center;margin-top:8px;font-size:11.5px;font-weight:700;background:rgba(255,255,255,.14);border-radius:999px;padding:5px 10px}
+@media (min-width:1100px){.depos{justify-content:center;overflow:visible;gap:14px}.depo{width:178px}.depo .cap b{font-size:15px}.depo .play{width:54px;height:54px}}
 @media (max-width:900px){.pgrid{grid-template-columns:1fr;gap:40px}}
 @media (max-width:600px){.ptl{padding:22px}.stamp{right:14px;top:14px;font-size:11px}}
 
@@ -715,7 +730,12 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
   <div class="marq rv">
     <div class="track" id="aprTrack"></div>
   </div>
-  <div class="wrap"><div class="depos" id="depos" hidden></div></div>
+  <div class="wrap dhead">
+    <span class="eyebrow rv">// depoimentos</span>
+    <h3 class="rv d1">Ouça quem estudou com o Instituto Souto <b class="g">e foi aprovado</b></h3>
+    <p class="rv d2">Inclusive na <b>GM de Duque de Caxias</b>, concurso da mesma banca <b>IDIB</b> que vai aplicar a prova da GCM de Angra.</p>
+  </div>
+  <div class="depos" id="depos"></div>
   <div class="center" style="margin-top:44px">
     <div class="cta-row rv"><a class="btn" href="#oferta"><span class="ic"><svg><use href="#i-shield"/></svg></span>Quero ser o próximo aprovado</a></div>
   </div>
@@ -1149,14 +1169,42 @@ const px=(ev)=>{ try{ if(window.fbq) fbq('track',ev); }catch(e){} };
 $$('a[href*="pay.hub.la"]').forEach(a=>a.addEventListener('click',()=>px('InitiateCheckout')));
 $$('.js-wa').forEach(a=>a.addEventListener('click',()=>px('Contact')));
 
-/* ===== DEPOIMENTOS: preencha e eles aparecem na seção de aprovados =====
-   Ex.: {nome:"Fulano", cargo:"Aprovado GM Duque de Caxias (IDIB)", texto:"...", foto:"img/depo-fulano.webp"}
-   ou   {nome:"Fulano", cargo:"...", video:"img/videos/depo-fulano.mp4"} */
-const DEPOIMENTOS = [];
-if(DEPOIMENTOS.length){
-  const box=$("#depos"); box.hidden=false;
-  box.innerHTML=DEPOIMENTOS.map(d=>`<figure class="depo rv">${d.video?`<video src="${d.video}" controls playsinline preload="none"></video>`:""}${d.texto?`<q>${d.texto}</q>`:""}<figcaption class="who">${d.foto?`<img src="${d.foto}" alt="" loading="lazy">`:""}<span><b>${d.nome}</b><small>${d.cargo}</small></span></figcaption></figure>`).join("");
-}
+/* ===== DEPOIMENTOS EM VIDEO (hospedados no site oficial do Instituto Souto) ===== */
+const DEP_BASE="https://siteoficial.institutosouto.com.br";
+const DEPOIMENTOS=[
+  {n:1,t:"Aprovado",c:"GM Duque de Caxias",idib:1},
+  {n:2,t:"Aprovada",c:"GM Duque de Caxias",idib:1},
+  {n:3,t:"Aluno",c:"Instituto Souto"},
+  {n:4,t:"Aluno",c:"Instituto Souto"},
+  {n:5,t:"Aluna",c:"Instituto Souto"},
+  {n:6,t:"Aluno",c:"Instituto Souto"}
+];
+(()=>{ const box=$("#depos");
+  box.innerHTML=DEPOIMENTOS.map((d,i)=>`<figure class="depo" data-n="${d.n}" tabindex="0" role="button" aria-label="Ouvir depoimento: ${d.t} ${d.c}">
+    <video playsinline preload="none" data-poster="${DEP_BASE}/img/dep${d.n}-poster.webp" data-src="${DEP_BASE}/video/dep${d.n}.mp4"></video>
+    <span class="rec">REC · CAM ${String(i+1).padStart(2,"0")}</span>
+    <span class="play"></span>
+    <figcaption class="cap">${d.idib?'<span class="idib">BANCA IDIB</span>':""}<b>${d.t}</b><small>${d.c}</small><br><span class="ouvir">🔊 Toque para ouvir</span></figcaption></figure>`).join("");
+  const vids=[...box.querySelectorAll("video")];
+  /* capa so carrega quando o card chega perto da tela */
+  const po=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.poster=e.target.dataset.poster; po.unobserve(e.target);} }),{rootMargin:"200px"});
+  vids.forEach(v=>po.observe(v));
+  const stopAll=except=>vids.forEach(v=>{ if(v!==except && !v.paused){ v.pause(); v.closest(".depo").classList.remove("playing"); } });
+  box.querySelectorAll(".depo").forEach(card=>{
+    const v=card.querySelector("video");
+    const toggle=()=>{
+      if(!v.src) v.src=v.dataset.src;
+      if(v.paused){ stopAll(v); v.controls=true; v.play().catch(()=>{}); card.classList.add("playing"); try{ if(window.fbq) fbq("trackCustom","DepoimentoPlay",{dep:card.dataset.n}); }catch(e){} }
+      else { v.pause(); card.classList.remove("playing"); }
+    };
+    card.addEventListener("click",e=>{ if(e.target===v && v.controls) return; toggle(); });
+    card.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); toggle(); } });
+    v.addEventListener("ended",()=>card.classList.remove("playing"));
+  });
+  /* pausa quando sai da tela */
+  const vo=new IntersectionObserver(es=>es.forEach(e=>{ const v=e.target; if(!e.isIntersecting && !v.paused){ v.pause(); v.closest(".depo").classList.remove("playing"); } }));
+  vids.forEach(v=>vo.observe(v));
+})();
 
 /* ===== PROVA DUQUE DE CAXIAS: salve o print em img/prova-duque-caxias.webp ===== */
 (()=>{ const im=$("#provaImg"), ph=$("#provaPh");
