@@ -437,9 +437,6 @@ details p{padding:0 22px 20px;color:var(--pmut);font-size:15px}
 .sticky .si b{color:#fff;display:block;font-size:14px}
 .sticky .btn{padding:6px 18px 6px 6px;font-size:14px}
 .sticky .btn .ic{width:34px;height:34px}
-.wafloat{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;z-index:61;box-shadow:0 12px 30px -8px rgba(37,211,102,.6);transition:transform .3s}
-.wafloat:hover{transform:scale(1.08)}
-.wafloat svg{width:28px;height:28px;color:#fff}
 #toasts{position:fixed;left:16px;bottom:18px;z-index:59;pointer-events:none}
 .toast{display:flex;gap:10px;align-items:center;background:rgba(10,11,16,.92);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:10px 14px 10px 10px;font-size:13px;color:#d3d5dc;max-width:290px;transform:translateY(20px);opacity:0;transition:all .5s}
 .toast.show{transform:none;opacity:1}
@@ -554,7 +551,7 @@ details p{padding:0 22px 20px;color:var(--pmut);font-size:15px}
   .hstats{gap:20px}
   .hchips{font-size:11.5px}
   .hchips>span:nth-child(3){display:none}
-  .sticky{left:12px;right:84px;transform:translateY(140%);width:auto;max-width:none;justify-content:space-between}
+  .sticky{left:12px;right:12px;transform:translateY(140%);width:auto;max-width:none;justify-content:space-between}
   .sticky.show{transform:none}
   .sticky .si{display:none}
   .sticky .btn{width:100%;justify-content:center}
@@ -747,7 +744,7 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
     <div class="plat-bg" id="platBg"></div>
     <div class="stage rv">
       <div class="laptop">
-        <div class="screen"><video class="lv" data-src="img/videos/01.mp4" muted loop playsinline preload="none" aria-label="Tour pela plataforma do Instituto Souto"></video></div>
+        <div class="screen"><video class="lv" data-src="video/01.mp4" muted loop playsinline preload="none" aria-label="Tour pela plataforma do Instituto Souto"></video></div>
         <div class="base"></div>
       </div>
       <div class="rock"><img src="img/pedra.webp" alt="" loading="lazy"></div>
@@ -1025,7 +1022,6 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
   <span class="si"><b>Preparatório GCM Angra</b>Acesso completo por R$ 297</span>
   <a class="btn" href="#oferta"><span class="ic"><svg><use href="#i-shield"/></svg></span>Quero minha vaga · R$ 297</a>
 </div>
-<a class="wafloat js-wa" href="#" aria-label="Falar no WhatsApp"><svg><use href="#i-wa"/></svg></a>
 <div id="toasts"></div>
 
 <script>
@@ -1083,7 +1079,7 @@ $("#platBg").innerHTML = `<div class="row">${row(APROVADOS)}</div><div class="ro
 
 $("#gcards").innerHTML = GIFS.map((g,i)=>`
   <article class="gcard rv ${i%2?'d1':''} ${g.wide?'wide':''}">
-    <div class="gmedia"><video class="lv" data-src="img/videos/${g.f}" muted loop playsinline preload="none" aria-label="${g.t}"></video><span class="live">DEMONSTRAÇÃO</span></div>
+    <div class="gmedia"><video class="lv" data-src="video/${g.f}" muted loop playsinline preload="none" aria-label="${g.t}"></video><span class="live">DEMONSTRAÇÃO</span></div>
     <div class="gbody"><div class="gmeta"><span>${g.tag}</span><span>${String(i+1).padStart(2,"0")} / ${String(GIFS.length).padStart(2,"0")}</span></div><h3>${g.t}</h3><p>${g.d}</p></div>
   </article>`).join("");
 
