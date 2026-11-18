@@ -357,6 +357,9 @@ h1 .g,h2 .g{font-weight:800}
 .pval{margin:18px 0 4px;font-size:clamp(66px,8.5vw,92px);font-weight:800;letter-spacing:-.045em;line-height:.9}
 .pval sup{font-size:.3em;vertical-align:top;margin-right:4px;letter-spacing:0;position:relative;top:.4em}
 .pval small{font-size:.4em}
+.pbnote{margin:16px auto 0;max-width:330px;font-size:14px;color:#fff;background:rgba(208,16,26,.18);border:1px dashed var(--orange);border-radius:12px;padding:10px 14px}
+.pbnote s{color:var(--red2);text-decoration-thickness:2px}
+.pbnote b{color:var(--orange)}
 .pfrom{margin-top:18px;font-size:15px;color:var(--gray)}
 .pfrom s{color:var(--red2);font-weight:700;text-decoration-thickness:2px}
 .pfrom+.pval{margin-top:8px}
@@ -912,10 +915,11 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
       <span class="pblack"><i></i>BLACK ANTECIPADA<i></i></span>
       <span class="ptag">PROMOÇÃO · ACESSO COMPLETO</span>
       <div class="ptotal"><span>Valor total</span><s>R$ 1.466,00</s></div>
+      <p class="pbnote">Era <s>R$ 397</s>, mas por conta da <b>Black Antecipada</b> o valor baixou!</p>
       <div class="pfrom">De <s>R$ 397</s> por apenas</div>
-      <div class="pval"><sup>R$</sup>247</div>
-      <div class="psub">no PIX</div>
-      <div class="psub2">ou <b style="color:#fff">R$ 297 no cartão</b> (parcelado)</div>
+      <div class="pval"><sup>R$</sup>297</div>
+      <div class="psub">à vista no PIX ou cartão</div>
+      <div class="psub2">ou <b style="color:#fff">12x de R$ 30,72</b> no cartão</div>
       <p class="pcomp">Menos que <b>uma única mensalidade</b> de cursinho presencial, com tudo focado na GCM de Angra.</p>
       <ul class="plist">
         <li><svg><use href="#i-check"/></svg>Acesso completo ao Preparatório GCM Angra</li>
@@ -1008,7 +1012,7 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
     <h2 class="rv d1">Pronto para conquistar <b class="g">sua farda na GCM de Angra?</b></h2>
     <p class="lead rv d2" style="margin:0 auto 32px">Comece hoje sua rotina de estudos com o Preparatório GCM Angra e chegue no edital à frente da concorrência.</p>
     <div class="cta-row rv d3">
-      <a class="btn" href="#oferta"><span class="ic"><svg><use href="#i-shield"/></svg></span>Quero minha vaga por R$ 247</a>
+      <a class="btn" href="#oferta"><span class="ic"><svg><use href="#i-shield"/></svg></span>Quero minha vaga por R$ 297</a>
       <a class="btn wa js-wa" href="#"><span class="ic"><svg><use href="#i-wa"/></svg></span>Falar no WhatsApp</a>
     </div>
     <p class="note rv">Caso tenha qualquer dúvida, nossa equipe estará à disposição para ajudar.</p>
@@ -1029,8 +1033,8 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
 </footer>
 
 <div class="sticky" id="sticky">
-  <span class="si"><b>Black Antecipada · GCM Angra</b>De R$ 397 por R$ 247 no PIX</span>
-  <a class="btn" href="#oferta"><span class="ic"><svg><use href="#i-shield"/></svg></span>Quero minha vaga · R$ 247</a>
+  <span class="si"><b>Black Antecipada · GCM Angra</b>De R$ 397 por R$ 297</span>
+  <a class="btn" href="#oferta"><span class="ic"><svg><use href="#i-shield"/></svg></span>Quero minha vaga · R$ 297</a>
 </div>
 <div id="toasts"></div>
 
@@ -1074,7 +1078,7 @@ const TOASTS = [
   ["R$","Salário inicial de <b>R$ 5.033,95</b>"],
   ["✓","<b>Acesso imediato</b> à plataforma"],
   ["7","<b>Garantia de 7 dias</b> sem enrolação"],
-  ["%","De R$ 397 por apenas <b>R$ 247 no PIX</b>"],
+  ["%","Black Antecipada: de R$ 397 por <b>R$ 297</b>"],
   ["!","Banca <b>IDIB</b> já contratada"]
 ];
 
