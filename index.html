@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Preparatório GCM Angra | Instituto Souto</title>
-<meta name="description" content="Banca IDIB contratada para o 1º concurso da história da GCM Angra dos Reis. Nível médio, sem limite de idade e R$ 5.033,95. Prepare-se com o Prof. Ismael Souto.">
+<meta name="description" content="SAIU O EDITAL da GCM Angra dos Reis: 200 vagas + 250 CR, banca IDIB, nível médio, sem limite de idade e R$ 5.033,95. Prova em 24/01/2027. Prepare-se com o Prof. Ismael Souto.">
 <meta name="theme-color" content="#000000">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,6 +124,69 @@ h1 .g,h2 .g{font-weight:800}
 .float.f1{right:4%;top:18%}
 .float.f2{right:5%;bottom:16%;animation-delay:-3s}
 @keyframes bob{50%{transform:translateY(-10px)}}
+
+
+/* ---------- SELO SAIU O EDITAL ---------- */
+.eseal{position:relative;display:inline-flex;align-items:center;gap:14px;margin-bottom:22px;padding:10px 18px 10px 12px;border-radius:18px;background:linear-gradient(135deg,#ff2d3a 0%,#d0101a 55%,#8c0710 100%);border:2px solid var(--gold);box-shadow:0 0 0 5px rgba(255,194,26,.14),0 18px 50px -12px rgba(255,26,42,.75);transform:rotate(-2.5deg);overflow:hidden;animation:esPulse 2s ease-in-out infinite}
+.eseal::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:esShine 3.2s ease-in-out infinite}
+.eseal .es-ic{width:46px;height:46px;flex:none;border-radius:13px;background:#000;display:grid;place-items:center;font-size:24px;line-height:1;box-shadow:inset 0 0 0 2px var(--gold)}
+.eseal .es-ic span{animation:esBlink 1s steps(2,start) infinite}
+.eseal .es-t{display:flex;flex-direction:column;line-height:1}
+.eseal small{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.16em;color:#ffe3a0;margin-bottom:5px}
+.eseal b{font-size:clamp(26px,3.2vw,38px);font-weight:900;font-style:italic;letter-spacing:-.01em;color:#fff;text-shadow:0 3px 0 #7a0008,0 0 24px rgba(255,212,90,.45)}
+.eseal .es-d{border-left:1px dashed rgba(255,227,160,.6);padding-left:14px;font-size:11.5px;font-weight:700;color:#ffe3a0;text-transform:uppercase;letter-spacing:.06em;line-height:1.25}
+.eseal .es-d strong{display:block;color:#fff;font-size:15px;letter-spacing:0}
+@keyframes esPulse{50%{box-shadow:0 0 0 9px rgba(255,194,26,.06),0 18px 60px -8px rgba(255,26,42,.95)}}
+@keyframes esShine{0%,55%{left:-60%}100%{left:130%}}
+@keyframes esBlink{to{visibility:hidden}}
+@media (max-width:600px){.eseal{gap:10px;padding:8px 12px 8px 8px}.eseal .es-ic{width:38px;height:38px;font-size:20px}.eseal .es-d{display:none}}
+.topbar .tag.ed{background:#d0101a;box-shadow:0 0 0 2px #000}
+
+/* ---------- SECAO EDITAL ---------- */
+.edital{background:radial-gradient(900px 500px at 85% 0%,rgba(255,26,42,.16),transparent 60%),radial-gradient(800px 500px at 0% 100%,rgba(31,95,255,.12),transparent 60%),#000;position:relative;overflow:hidden}
+.ed-head{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:end;margin-bottom:46px}
+.ed-head h2{font-size:clamp(30px,4vw,50px)}
+.ed-count{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap}
+.ed-count div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 20px;min-width:150px;text-align:left}
+.ed-count div.hot{border-color:rgba(255,162,31,.5);background:linear-gradient(180deg,rgba(255,74,38,.16),rgba(255,74,38,.03))}
+.ed-count strong{display:block;font-size:42px;font-weight:800;letter-spacing:-.04em;line-height:1}
+.ed-count div.hot strong{color:var(--gold)}
+.ed-count small{font-size:12.5px;color:var(--gray)}
+.ed-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ed-i{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 18px 20px;display:flex;gap:14px;align-items:flex-start;transition:border-color .3s,transform .3s}
+.ed-i:hover{border-color:rgba(255,162,31,.45);transform:translateY(-4px)}
+.ed-i .icn{width:40px;height:40px;flex:none;border-radius:12px;background:rgba(255,162,31,.1);color:var(--orange);display:grid;place-items:center}
+.ed-i .icn svg{width:20px;height:20px}
+.ed-i small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
+.ed-i b{display:block;font-size:16.5px;line-height:1.3;color:#fff}
+.ed-i em{display:block;font-style:normal;font-size:13px;color:var(--gray);margin-top:3px}
+.ed-i.hot{background:linear-gradient(160deg,rgba(255,74,38,.18),var(--card) 70%);border-color:rgba(255,162,31,.4)}
+.ed-i.hot b{color:var(--gold)}
+.ed-i.w2{grid-column:span 2}
+.disc{margin-top:80px}
+.disc-head{text-align:center;margin-bottom:38px}
+.disc-head h2{font-size:clamp(30px,4vw,50px)}
+.disc-head .lead{margin:14px auto 0}
+.dgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.dsc{position:relative;overflow:hidden;border-radius:22px;padding:24px 22px 22px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg,#12131b,#08090d);border:1px solid var(--line);transition:transform .35s,border-color .35s,box-shadow .35s}
+.dsc::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:var(--grad-btn)}
+.dsc::after{content:attr(data-n);position:absolute;right:-6px;bottom:-26px;font-size:120px;font-weight:900;letter-spacing:-.06em;color:rgba(255,255,255,.035);line-height:1}
+.dsc:hover{transform:translateY(-6px);border-color:rgba(255,162,31,.5);box-shadow:0 30px 60px -30px rgba(255,74,38,.6)}
+.dsc .dt{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.dsc .dn{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--orange);letter-spacing:.1em}
+.dsc .de{width:46px;height:46px;border-radius:14px;background:var(--grad-btn);display:grid;place-items:center;font-size:22px;box-shadow:0 10px 24px -10px rgba(255,74,38,.8)}
+.dsc h3{font-size:20px;line-height:1.2;margin-top:26px;position:relative;z-index:1}
+.dsc p{font-size:13.5px;color:var(--gray);margin-top:6px;position:relative;z-index:1}
+.dred{margin-top:14px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:space-between;border-radius:22px;padding:22px 26px;background:linear-gradient(100deg,rgba(255,212,90,.14),rgba(255,74,38,.14) 60%,rgba(208,16,26,.2));border:1px solid rgba(255,162,31,.45)}
+.dred .l{display:flex;align-items:center;gap:16px}
+.dred .de{width:52px;height:52px;border-radius:15px;background:#000;border:2px solid var(--gold);display:grid;place-items:center;font-size:24px;flex:none}
+.dred h3{font-size:21px}
+.dred p{font-size:14px;color:#d7d9e0}
+.dred .fmt{display:flex;gap:10px;flex-wrap:wrap}
+.dred .fmt span{background:#000;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:700;font-size:14px}
+.dred .fmt span b{color:var(--gold)}
+@media (max-width:1080px){.ed-grid,.dgrid{grid-template-columns:repeat(2,1fr)}.ed-head{grid-template-columns:1fr}.ed-count{justify-content:flex-start}}
+@media (max-width:600px){.ed-grid{grid-template-columns:1fr}.ed-i.w2{grid-column:auto}.dgrid{gap:10px}.dsc{min-height:170px;padding:18px 16px}.dsc h3{font-size:17px;margin-top:18px}.dsc p{display:none}.ed-count div{min-width:0;flex:1}.ed-count strong{font-size:34px}}
 
 /* ---------- XBAND (ficha) ---------- */
 .xband{background:#07080c;border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;z-index:2}
@@ -626,8 +689,8 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
 <div id="progress"></div>
 
 <div class="topbar">
-  <span class="tag"><span class="dot"></span>URGENTE</span>
-  <span class="txt">Banca <b>IDIB contratada</b> · o edital pode sair a qualquer momento</span>
+  <span class="tag ed"><span class="dot"></span>SAIU O EDITAL!</span>
+  <span class="txt"><b>200 vagas + 250 CR</b> · inscrições até <b>21/12</b> · prova em <b>24/01/2027</b></span>
   <a href="#oferta">Garantir minha vaga <svg width="13" height="13"><use href="#i-arrow"/></svg></a>
 </div>
 
@@ -638,20 +701,21 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
 
   <div class="wrap">
     <div class="hero-txt">
+      <div class="eseal" role="note"><span class="es-ic"><span>🚨</span></span><span class="es-t"><small>URGENTE · GCM ANGRA DOS REIS</small><b>SAIU O EDITAL!!</b></span><span class="es-d">Prova em<strong>24/01/2027</strong></span></div>
       <div class="hchips">
         <span><svg class="bdg"><use href="#badge"/></svg><b>GCM</b> · Angra dos Reis</span>
         <span>Nível Médio</span>
         <span><img src="img/avatar-ismael.webp" alt="" width="22" height="22" fetchpriority="low" decoding="async">@profismaelsouto</span>
       </div>
       <h1 class="rv d1">Conquiste sua farda na <span class="g">Guarda Municipal de Angra</span> estudando apenas 2 horas por dia</h1>
-      <p class="sub">Mesmo que esteja começando do zero. O <b>1º concurso da história</b> da GCM de Angra dos Reis vem aí: <b>nível médio</b>, <b>sem limite de idade</b> e <b>R$ 5.033,95</b> de remuneração inicial. Largue na frente antes do edital sair.</p>
+      <p class="sub">Mesmo que esteja começando do zero. Saiu o edital do <b>1º concurso da história</b> da GCM de Angra dos Reis: <b>200 vagas imediatas + 250 CR</b>, <b>nível médio</b>, <b>sem limite de idade</b> e <b>R$ 5.033,95</b> com periculosidade. A prova é em <b>24/01/2027</b>: comece hoje.</p>
       <div class="cta-row">
         <a class="btn" href="#oferta"><span class="ic"><svg><use href="#i-shield"/></svg></span>Quero minha vaga na GCM</a>
       </div>
       <div class="hstats">
-        <div><strong>IDIB</strong>banca contratada</div>
-        <div><strong>Sem limite</strong>de idade (18+)</div>
-        <div><strong>35h</strong>semanais</div>
+        <div><strong>200</strong>vagas imediatas</div>
+        <div><strong>+250</strong>cadastro reserva</div>
+        <div><strong>24/01</strong>data da prova</div>
       </div>
     </div>
   </div>
@@ -661,13 +725,64 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
 <div class="xband">
   <div class="wrap">
     <div class="c hot"><small>Salário inicial</small><strong>R$ 5.033,95</strong></div>
+    <div class="c hot"><small>Vagas</small><strong>200 + 250 CR</strong></div>
     <div class="c"><small>Banca</small><strong>IDIB</strong></div>
-    <div class="c"><small>Escolaridade</small><strong>Nível médio</strong></div>
-    <div class="c"><small>Idade máxima</small><strong>Sem limite</strong></div>
-    <div class="c"><small>Carga horária</small><strong>35h semanais</strong></div>
-    <div class="c hot"><small>Quadro</small><strong>200 vagas</strong></div>
+    <div class="c"><small>Inscrições</small><strong>até 21/12/2026</strong></div>
+    <div class="c"><small>Taxa</small><strong>R$ 133,00</strong></div>
+    <div class="c hot"><small>Prova</small><strong>24/01/2027</strong></div>
   </div>
 </div>
+
+<!-- ================= EDITAL ================= -->
+<section class="edital pad" id="edital">
+  <div class="wrap">
+    <div class="ed-head">
+      <div>
+        <span class="eyebrow rv">// edital publicado</span>
+        <h2 class="rv d1">Saiu o edital: tudo o que você precisa saber da <b class="g">GCM de Angra dos Reis</b></h2>
+      </div>
+      <div class="ed-count rv d2">
+        <div><strong id="cdIns">--</strong><small>dias para o fim das inscrições</small></div>
+        <div class="hot"><strong id="cdProva">--</strong><small>dias até a prova</small></div>
+      </div>
+    </div>
+    <div class="ed-grid">
+      <div class="ed-i rv"><span class="icn"><svg><use href="#i-shield"/></svg></span><div><small>Cargo</small><b>Guarda Civil Municipal</b></div></div>
+      <div class="ed-i hot rv d1"><span class="icn"><svg><use href="#i-users"/></svg></span><div><small>Vagas</small><b>200 imediatas + 250 CR</b><em>cadastro reserva</em></div></div>
+      <div class="ed-i rv d2"><span class="icn"><svg><use href="#i-pen"/></svg></span><div><small>Banca</small><b>IDIB</b></div></div>
+      <div class="ed-i rv d3"><span class="icn"><svg><use href="#i-list"/></svg></span><div><small>Escolaridade</small><b>Nível médio</b></div></div>
+      <div class="ed-i rv"><span class="icn"><svg><use href="#i-check"/></svg></span><div><small>Idade</small><b>Mínimo 18 anos</b><em>sem limite máximo</em></div></div>
+      <div class="ed-i rv d1"><span class="icn"><svg><use href="#i-trend"/></svg></span><div><small>Altura mínima</small><b>1,60 m (homens)</b><em>1,55 m (mulheres)</em></div></div>
+      <div class="ed-i hot rv d2"><span class="icn"><svg><use href="#i-money"/></svg></span><div><small>Salário</small><b>R$ 5.033,95</b><em>com periculosidade</em></div></div>
+      <div class="ed-i rv d3"><span class="icn"><svg><use href="#i-target"/></svg></span><div><small>CNH</small><b>Categoria AB</b><em>comprovada na posse</em></div></div>
+      <div class="ed-i w2 rv"><span class="icn"><svg><use href="#i-cal"/></svg></span><div><small>Inscrições</small><b>18/11 a 21/12/2026</b><em>taxa de R$ 133,00</em></div></div>
+      <div class="ed-i hot w2 rv d1"><span class="icn"><svg><use href="#i-trophy"/></svg></span><div><small>Prova</small><b>24/01/2027</b><em>60 questões + redação</em></div></div>
+    </div>
+
+    <div class="disc" id="disciplinas">
+      <div class="disc-head">
+        <span class="eyebrow rv">// o que cai na prova</span>
+        <h2 class="rv d1">As disciplinas do <b class="g">concurso GCM Angra</b></h2>
+        <p class="lead rv d2">Todas as matérias do edital estão no Preparatório GCM Angra, com teoria e questões no padrão da banca IDIB.</p>
+      </div>
+      <div class="dgrid">
+        <div class="dsc rv" data-n="01"><div class="dt"><span class="dn">01</span><span class="de">📝</span></div><div><h3>Língua Portuguesa</h3><p>Teoria + questões IDIB</p></div></div>
+        <div class="dsc rv d1" data-n="02"><div class="dt"><span class="dn">02</span><span class="de">🧮</span></div><div><h3>Raciocínio Lógico-Matemático</h3><p>Do zero ao avançado</p></div></div>
+        <div class="dsc rv d2" data-n="03"><div class="dt"><span class="dn">03</span><span class="de">🏛️</span></div><div><h3>Direito Administrativo</h3><p>Teoria + questões IDIB</p></div></div>
+        <div class="dsc rv d3" data-n="04"><div class="dt"><span class="dn">04</span><span class="de">📜</span></div><div><h3>Direito Constitucional</h3><p>Teoria + questões IDIB</p></div></div>
+        <div class="dsc rv" data-n="05"><div class="dt"><span class="dn">05</span><span class="de">💻</span></div><div><h3>Informática</h3><p>Teoria + questões IDIB</p></div></div>
+        <div class="dsc rv d1" data-n="06"><div class="dt"><span class="dn">06</span><span class="de">🤝</span></div><div><h3>Direitos Humanos</h3><p>Teoria + questões IDIB</p></div></div>
+        <div class="dsc rv d2" data-n="07"><div class="dt"><span class="dn">07</span><span class="de">⚖️</span></div><div><h3>Direito Penal e Processual Penal</h3><p>Teoria + questões IDIB</p></div></div>
+        <div class="dsc rv d3" data-n="08"><div class="dt"><span class="dn">08</span><span class="de">📚</span></div><div><h3>Legislação Extravagante</h3><p>Teoria + questões IDIB</p></div></div>
+      </div>
+      <div class="dred rv">
+        <div class="l"><span class="de">✍️</span><div><h3>+ Redação</h3><p>A prova também cobra redação. Treine para não perder pontos nela.</p></div></div>
+        <div class="fmt"><span><b>60</b> questões</span><span><b>+</b> redação</span><span>📅 <b>24/01/2027</b></span></div>
+      </div>
+      <div class="center" style="margin-top:40px"><div class="cta-row rv"><a class="btn" href="#oferta"><span class="ic"><svg><use href="#i-shield"/></svg></span>Quero estudar todas as matérias</a></div></div>
+    </div>
+  </div>
+</section>
 
 <!-- ================= FOCUS ================= -->
 <!-- ================= PROVA: DUQUE DE CAXIAS ================= -->
@@ -803,7 +918,7 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
       <div class="pitem"><span class="n">02</span><span class="t"><s>Apostilas rasas</s> → teoria profunda + pegadinhas da banca</span><span class="ck"><svg><use href="#i-check"/></svg></span></div>
       <div class="pitem"><span class="n">03</span><span class="t"><s>Cursinhos genéricos</s> → foco total na realidade da GCM</span><span class="ck"><svg><use href="#i-check"/></svg></span></div>
       <div class="pitem"><span class="n">04</span><span class="t"><s>Deixar Matemática para depois</s> → do zero ao avançado</span><span class="ck"><svg><use href="#i-check"/></svg></span></div>
-      <div class="pitem"><span class="n">05</span><span class="t"><s>Esperar o edital</s> → rotina de estudos começando hoje</span><span class="ck"><svg><use href="#i-check"/></svg></span></div>
+      <div class="pitem"><span class="n">05</span><span class="t"><s>Deixar para perto da prova</s> → rotina de estudos começando hoje</span><span class="ck"><svg><use href="#i-check"/></svg></span></div>
     </div>
   </div>
   <div class="wrap">
@@ -822,9 +937,9 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
     <div>
       <span class="eyebrow rv">// 1º concurso da história</span>
       <h2 class="rv d1">Uma oportunidade que <b class="g">Angra nunca teve</b></h2>
-      <p class="lead rv d2" style="margin:18px 0 10px">Pela primeira vez a Guarda Civil Municipal de Angra dos Reis vai abrir concurso público. <b style="color:var(--pink)">O Instituto IDIB foi formalmente oficializado</b> e a lei municipal já criou <b style="color:var(--pink)">200 vagas</b>. Quando o edital sair, o prazo até a prova costuma ser curto demais para quem deixou para depois.</p>
+      <p class="lead rv d2" style="margin:18px 0 10px">Pela primeira vez a Guarda Civil Municipal de Angra dos Reis abriu concurso público. <b style="color:var(--pink)">O edital saiu</b> com <b style="color:var(--pink)">200 vagas imediatas + 250 em cadastro reserva</b>, banca IDIB e prova em 24/01/2027. O prazo até a prova é curto: quem começar agora sai na frente.</p>
       <div class="ocard rv"><span class="icn"><svg><use href="#i-shield"/></svg></span><div><small>Cargo</small><h3>Guarda Civil Municipal</h3><p>Nível médio, 35h semanais e sem limite máximo de idade: basta ter 18 anos ou mais.</p></div></div>
-      <div class="ocard rv d1"><span class="icn"><svg><use href="#i-pen"/></svg></span><div><small>Banca</small><h3>Instituto IDIB</h3><p>Banca definida: o edital pode sair a qualquer momento. Quem começa agora chega na prova um nível acima.</p></div></div>
+      <div class="ocard rv d1"><span class="icn"><svg><use href="#i-pen"/></svg></span><div><small>Banca</small><h3>Instituto IDIB</h3><p>Edital publicado: prova em 24/01/2027, com 60 questões + redação. Quem começa agora chega na prova um nível acima.</p></div></div>
       <div class="salary rv d2">
         <div class="v"><sup>R$</sup><span data-count="5033.95" data-dec="2">5.033,95</span><small>por mês</small></div>
         <p>Vencimento-base <b>+ 30% de periculosidade</b>, estabilidade e uma carreira na segurança pública. Essa pode ser a oportunidade que você estava esperando.</p>
@@ -848,7 +963,7 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
       <div class="dline"><span class="di"><svg><use href="#i-check"/></svg></span><span>Revisões em dia<small>Nenhuma atrasada</small></span><b data-count="36">36</b></div>
       <div class="dbox evo"><small><span>Evolução no edital</span><span style="color:#fff;font-size:14px"><span data-count="72">72</span>%</span></small>
         <div class="eb"><i data-w="72"></i></div>
-        <div class="legend"><span style="--c:#ffd45a">Português</span><span style="--c:#ff7a1f">Matemática</span><span style="--c:#e3161b">Legislação da Guarda</span></div>
+        <div class="legend"><span style="--c:#ffd45a">Português</span><span style="--c:#ff7a1f">Raciocínio Lógico</span><span style="--c:#e3161b">Legislação Extravagante</span></div>
       </div>
       <div class="dtoast"><i>✓</i><div><b>Meta do dia concluída</b><small>Flashcards · Lei 13.022/2014</small></div></div>
     </div>
@@ -868,7 +983,7 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
         <h3><b>Para quem NÃO é</b> o Preparatório GCM Angra</h3>
         <hr>
         <ul>
-          <li>Quem vai esperar o edital sair para começar</li>
+          <li>Quem vai deixar para estudar na última semana</li>
           <li>Quem procura atalho sem estudo</li>
           <li>Quem não quer seguir uma rotina de estudos</li>
           <li>Quem não tem vocação para servir à população</li>
@@ -991,12 +1106,14 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
       </div>
     </div>
     <div>
-      <details class="rv" open><summary>O edital já foi publicado?</summary><p>Ainda não. O que já está oficializado é a contratação da banca IDIB. Com a banca definida, o edital pode sair a qualquer momento, por isso o ideal é começar a estudar agora.</p></details>
+      <details class="rv" open><summary>O edital já foi publicado?</summary><p>Sim, saiu o edital! São 200 vagas imediatas + 250 em cadastro reserva. Inscrições de 18/11 a 21/12/2026 (taxa de R$ 133,00) e prova em 24/01/2027, com 60 questões + redação.</p></details>
+      <details class="rv"><summary>Quais matérias caem na prova?</summary><p>Português, Raciocínio Lógico-Matemático, Direito Administrativo e Constitucional, Informática, Direitos Humanos, Direito Penal e Processual Penal e Legislação Extravagante, além da redação.</p></details>
+      <details class="rv"><summary>Tem altura mínima e exigência de CNH?</summary><p>Sim. Altura mínima de 1,60 m para homens e 1,55 m para mulheres, e CNH categoria AB, comprovada na posse.</p></details>
       <details class="rv"><summary>Qual é a banca do concurso?</summary><p>O Instituto IDIB foi formalmente oficializado para organizar o 1º concurso da Guarda Civil Municipal de Angra dos Reis.</p></details>
       <details class="rv"><summary>Existe limite de idade?</summary><p>Não há limite máximo de idade. É preciso apenas ter 18 anos ou mais.</p></details>
       <details class="rv"><summary>Qual a escolaridade exigida?</summary><p>O concurso é de nível médio.</p></details>
       <details class="rv"><summary>O acesso ao preparatório é imediato?</summary><p>Sim. Assim que o pagamento é confirmado, você recebe o acesso e já pode começar.</p></details>
-      <details class="rv"><summary>E se o edital mudar o conteúdo?</summary><p>Não precisa comprar outro curso. Com a <b>Garantia de Atualização Pós-Edital</b>, qualquer mudança de conteúdo entra na sua área de membros de forma 100% gratuita.</p></details>
+      <details class="rv"><summary>E se sair retificação do edital?</summary><p>Não precisa comprar outro curso. Com a <b>Garantia de Atualização Pós-Edital</b>, qualquer mudança de conteúdo entra na sua área de membros de forma 100% gratuita.</p></details>
       <details class="rv"><summary>Tenho dúvidas durante as aulas, onde pergunto?</summary><p>Você tem acesso ao suporte exclusivo para alunos dentro da plataforma. Suas dúvidas sobre aulas e questões são respondidas pela equipe de professores.</p></details>
       <details class="rv"><summary>Consigo estudar pelo celular?</summary><p>Sim. Além do computador, você acessa a plataforma também pelo celular e estuda onde e quando puder.</p></details>
       <details class="rv"><summary>Tenho garantia?</summary><p>Sim. Você tem 7 dias de garantia: se não gostar, é só pedir o cancelamento dentro do prazo e o valor é devolvido.</p></details>
@@ -1008,9 +1125,9 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
 <footer class="foot notch center" style="--prev:var(--paper)">
   <div class="glow"></div>
   <div class="wrap" style="position:relative">
-    <span class="eyebrow rv"><span class="dot" style="display:inline-block;margin-right:8px;vertical-align:middle"></span>Urgente · edital a qualquer momento</span>
+    <span class="eyebrow rv"><span class="dot" style="display:inline-block;margin-right:8px;vertical-align:middle"></span>Saiu o edital · prova em 24/01/2027</span>
     <h2 class="rv d1">Pronto para conquistar <b class="g">sua farda na GCM de Angra?</b></h2>
-    <p class="lead rv d2" style="margin:0 auto 32px">Comece hoje sua rotina de estudos com o Preparatório GCM Angra e chegue no edital à frente da concorrência.</p>
+    <p class="lead rv d2" style="margin:0 auto 32px">Comece hoje sua rotina de estudos com o Preparatório GCM Angra e chegue na prova de 24/01/2027 à frente da concorrência.</p>
     <div class="cta-row rv d3">
       <a class="btn" href="#oferta"><span class="ic"><svg><use href="#i-shield"/></svg></span>Quero minha vaga por R$ 297</a>
       <a class="btn wa js-wa" href="#"><span class="ic"><svg><use href="#i-wa"/></svg></span>Falar no WhatsApp</a>
@@ -1069,17 +1186,18 @@ const STEPS = [
   ["Banco de questões IDIB","Treine no padrão da banca com um banco de questões exclusivo."],
   ["Flashcards e mapas mentais","Revisões rápidas e visuais para fixar o conteúdo com muito mais facilidade."],
   ["Hackeando a banca IDIB","Os padrões ocultos da banca: como ela pensa, o que cobra e onde tenta te derrubar."],
-  ["Atualização pós-edital","Saiu o edital? Qualquer mudança de conteúdo entra na sua área de membros sem custo."]
+  ["Atualização pós-edital","Saiu retificação? Qualquer mudança de conteúdo entra na sua área de membros sem custo."]
 ];
 
-const MARQ = ["URGENTE","BANCA IDIB CONTRATADA","1º CONCURSO DA HISTÓRIA","R$ 5.033,95","EDITAL A QUALQUER MOMENTO","SEM LIMITE DE IDADE"];
+(function(){var d=function(y,m,dd){return Math.max(0,Math.ceil((new Date(y,m,dd)-new Date())/864e5))};var a=document.getElementById("cdIns"),b=document.getElementById("cdProva");if(a)a.textContent=d(2026,11,22);if(b)b.textContent=d(2027,0,24);})();
+const MARQ = ["SAIU O EDITAL!!","200 VAGAS + 250 CR","PROVA EM 24/01/2027","BANCA IDIB","R$ 5.033,95","SEM LIMITE DE IDADE","1º CONCURSO DA HISTÓRIA"];
 
 const TOASTS = [
   ["R$","Salário inicial de <b>R$ 5.033,95</b>"],
   ["✓","<b>Acesso imediato</b> à plataforma"],
   ["7","<b>Garantia de 7 dias</b> sem enrolação"],
   ["%","Black Antecipada: de R$ 397 por <b>R$ 297</b>"],
-  ["!","Banca <b>IDIB</b> já contratada"]
+  ["!","<b>Saiu o edital!</b> Inscrições até 21/12"]
 ];
 
 /* ===== RENDER ===== */
