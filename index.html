@@ -348,6 +348,10 @@ h1 .g,h2 .g{font-weight:800}
 .pbrand{display:flex;align-items:center;justify-content:center;gap:10px;font-weight:700;margin-bottom:16px}
 .pbrand svg{width:26px;height:33px}
 .ptag{display:inline-block;background:var(--grad-btn);color:#1a0700;font-weight:800;font-size:12.5px;padding:6px 14px;border-radius:999px;letter-spacing:.04em}
+.pblack{display:flex;align-items:center;justify-content:center;gap:10px;width:max-content;margin:0 auto 12px;background:#000;color:#fff;font-weight:900;font-size:15px;letter-spacing:.14em;padding:9px 20px;border-radius:8px;border:2px solid var(--orange);box-shadow:0 0 0 4px rgba(255,162,31,.15),0 10px 30px -8px rgba(255,74,38,.7);transform:rotate(-2deg);animation:pbk 2.4s ease-in-out infinite}
+.pblack i{width:7px;height:7px;border-radius:50%;background:var(--orange)}
+@keyframes pbk{50%{transform:rotate(-2deg) scale(1.05)}}
+@media (prefers-reduced-motion:reduce){.pblack{animation:none}}
 .ptotal{margin-top:22px;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:12px 0;display:flex;justify-content:space-between;font-size:14px;color:var(--gray)}
 .ptotal s{color:var(--red2);text-decoration-thickness:2px}
 .pval{margin:18px 0 4px;font-size:clamp(66px,8.5vw,92px);font-weight:800;letter-spacing:-.045em;line-height:.9}
@@ -905,6 +909,7 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
 
     <div class="price rv d1">
       <div class="pbrand"><svg><use href="#badge"/></svg>Instituto Souto</div>
+      <span class="pblack"><i></i>BLACK ANTECIPADA<i></i></span>
       <span class="ptag">PROMOÇÃO · ACESSO COMPLETO</span>
       <div class="ptotal"><span>Valor total</span><s>R$ 1.466,00</s></div>
       <div class="pfrom">De <s>R$ 397</s> por apenas</div>
@@ -1024,7 +1029,7 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
 </footer>
 
 <div class="sticky" id="sticky">
-  <span class="si"><b>Preparatório GCM Angra</b>De R$ 397 por R$ 247 no PIX</span>
+  <span class="si"><b>Black Antecipada · GCM Angra</b>De R$ 397 por R$ 247 no PIX</span>
   <a class="btn" href="#oferta"><span class="ic"><svg><use href="#i-shield"/></svg></span>Quero minha vaga · R$ 247</a>
 </div>
 <div id="toasts"></div>
