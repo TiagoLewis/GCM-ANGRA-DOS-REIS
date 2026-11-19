@@ -389,6 +389,12 @@ h1 .g,h2 .g{font-weight:800}
 .grp li{display:flex;gap:9px;font-size:14px;color:var(--pmut);line-height:1.35;align-items:flex-start}
 .grp li::before{content:"";flex:none;width:16px;height:16px;margin-top:1px;border-radius:50%;background:#ffe9d6 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d0451a' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/10px no-repeat}
 .grp li span{flex:1}
+.grp.red{grid-column:1/-1;position:relative;background:linear-gradient(135deg,#fff7ec,#fff);border:2px solid #ffb35c;box-shadow:0 18px 40px -24px rgba(255,74,38,.55)}
+.grp.red ul{grid-template-columns:repeat(3,1fr);gap:12px}
+.grp.red li{color:var(--pink);flex-wrap:wrap}
+.grp.red li em{font-style:normal;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#1a7f3c;background:#e3f8ea;border-radius:999px;padding:2px 8px;margin-left:25px}
+.gnew{position:absolute;top:-11px;right:18px;background:var(--grad-btn);color:#1a0700;font-weight:900;font-size:11px;letter-spacing:.12em;padding:4px 12px;border-radius:999px}
+@media (max-width:700px){.grp.red ul{grid-template-columns:1fr}}
 .grp li s{color:#b2b4bd;font-size:12.5px;white-space:nowrap}
 .notfull{font-size:clamp(20px,2.2vw,26px);font-weight:800;color:#d0101a;margin-top:26px;letter-spacing:-.02em}
 .price{background:linear-gradient(180deg,#0f1018,#050608);color:#fff;border-radius:30px;padding:34px 30px 28px;position:sticky;top:30px;border:1px solid rgba(255,162,31,.4);box-shadow:0 0 0 6px rgba(255,162,31,.08),0 50px 90px -40px rgba(208,16,26,.6);text-align:center;overflow:hidden}
@@ -761,7 +767,7 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
         <div class="dsc rv d3" data-n="08"><div class="dt"><span class="dn">08</span><span class="de">📚</span></div><div><h3>Legislação Extravagante</h3><p>Teoria + questões IDIB</p></div></div>
       </div>
       <div class="dred rv">
-        <div class="l"><span class="de">✍️</span><div><h3>+ Redação</h3><p>A prova também cobra redação. Treine para não perder pontos nela.</p></div></div>
+        <div class="l"><span class="de">✍️</span><div><h3>+ Redação</h3><p>Incluso no preparatório: <b>Curso de Redação Nota Máxima</b>, <b>correção individualizada</b> e <b>lista com 30 temas</b>.</p></div></div>
         <div class="fmt"><span><b>60</b> questões</span><span><b>+</b> redação</span><span>📅 <b>24/01/2027</b></span></div>
       </div>
       <div class="center" style="margin-top:40px"><div class="cta-row rv"><a class="btn" href="#oferta"><span class="ic"><svg><use href="#i-shield"/></svg></span>Quero estudar todas as matérias</a></div></div>
@@ -822,7 +828,7 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
     </div>
     <div class="center" style="margin-top:44px">
       <div class="cta-row rv"><a class="btn" href="#oferta"><span class="ic"><svg><use href="#i-shield"/></svg></span>Quero começar minha preparação</a></div>
-      <div class="mstats rv d1"><span><svg><use href="#i-play"/></svg><b>8</b> recursos</span><span><svg><use href="#i-bolt"/></svg><b>2h</b> por dia</span><span><svg><use href="#i-lock"/></svg><b>1</b> plataforma</span></div>
+      <div class="mstats rv d1"><span><svg><use href="#i-play"/></svg><b>11</b> recursos</span><span><svg><use href="#i-bolt"/></svg><b>2h</b> por dia</span><span><svg><use href="#i-lock"/></svg><b>1</b> plataforma</span></div>
     </div>
 
   </div>
@@ -996,7 +1002,7 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
     <div>
       <span class="eyebrow rv">// tudo o que você terá acesso</span>
       <h2 class="rv d1" style="font-size:clamp(28px,3.4vw,40px)">O que você vai receber:</h2>
-      <div class="counts rv d2"><span><b>8</b> recursos</span><span><b>Mentoria</b> de estudos</span><span><b>1</b> plataforma</span></div>
+      <div class="counts rv d2"><span><b>11</b> recursos</span><span><b>Mentoria</b> de estudos</span><span><b>1</b> plataforma</span></div>
       <div class="groups">
         <div class="grp rv"><div class="gh"><span class="icn"><svg><use href="#i-play"/></svg></span><h3>Curso completo<small>2 itens</small></h3></div>
           <ul><li><span>Curso Completo GCM Angra (teoria + exercícios)</span><s>R$ 397</s></li><li><span>Hackeando a Banca IDIB</span><s>R$ 197</s></li></ul></div>
@@ -1006,6 +1012,8 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
           <ul><li><span>Plano de Estudos Individualizado</span><s>R$ 97</s></li><li><span>Super Cronograma IA</span><s>R$ 97</s></li><li><span>Flashcards</span><s>R$ 67</s></li><li><span>Mapas Mentais</span><s>R$ 67</s></li></ul></div>
         <div class="grp rv d3"><div class="gh"><span class="icn"><svg><use href="#i-users"/></svg></span><h3>Acompanhamento<small>3 itens</small></h3></div>
           <ul><li><span>Mentoria de estudos</span><s>R$ 397</s></li><li><span>Suporte tira-dúvidas com professores</span></li><li><span>Garantia de atualização pós-edital</span></li></ul></div>
+        <div class="grp red rv"><span class="gnew">NOVO</span><div class="gh"><span class="icn"><svg><use href="#i-pen"/></svg></span><h3>Redação nota máxima<small>3 itens</small></h3></div>
+          <ul><li><span><b>Curso de Redação Nota Máxima</b></span><em>incluso</em></li><li><span><b>Correção individualizada</b> de redação</span><em>incluso</em></li><li><span><b>Lista com 30 temas</b> de redação</span><em>incluso</em></li></ul></div>
       </div>
       <p class="notfull rv">Mas você não vai pagar R$ 1.466!</p>
     </div>
@@ -1025,6 +1033,8 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
         <li><svg><use href="#i-check"/></svg>Acesso completo ao Preparatório GCM Angra</li>
         <li><svg><use href="#i-check"/></svg>Mentoria de estudos com suporte direto</li>
         <li><svg><use href="#i-check"/></svg>Questões, flashcards e mapas mentais</li>
+        <li><svg><use href="#i-check"/></svg>Curso de Redação Nota Máxima + correção individualizada</li>
+        <li><svg><use href="#i-check"/></svg>Lista com 30 temas de redação</li>
         <li><svg><use href="#i-check"/></svg>Atualização gratuita pós-edital</li>
       </ul>
       <p class="pproof"><b>+4.000 alunos</b> aprovados com o Prof. Ismael!</p>
@@ -1070,7 +1080,7 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
       <div class="anum rv">
         <div><b>+<span data-count="4000" data-sep="1">4.000</span></b><span>alunos aprovados</span></div>
         <div><b data-count="4">4</b><span>aprovações militares</span></div>
-        <div><b data-count="8">8</b><span>recursos no preparatório</span></div>
+        <div><b data-count="11">11</b><span>recursos no preparatório</span></div>
       </div>
       <a class="ig rv" href="https://instagram.com/profismaelsouto" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg><span><b>@profismaelsouto</b> · siga para não perder nenhuma atualização desse concurso</span></a>
     </div>
@@ -1093,6 +1103,7 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
     <div>
       <details class="rv" open><summary>O edital já foi publicado?</summary><p>Sim, saiu o edital! São 200 vagas imediatas + 250 em cadastro reserva. Inscrições de 18/11 a 21/12/2026 (taxa de R$ 133,00) e prova em 24/01/2027, com 60 questões + redação.</p></details>
       <details class="rv"><summary>Quais matérias caem na prova?</summary><p>Português, Raciocínio Lógico-Matemático, Direito Administrativo e Constitucional, Informática, Direitos Humanos, Direito Penal e Processual Penal e Legislação Extravagante, além da redação.</p></details>
+      <details class="rv"><summary>O preparatório tem redação?</summary><p>Sim! Você recebe o <b>Curso de Redação Nota Máxima</b>, <b>correção individualizada</b> das suas redações e uma <b>lista com 30 temas</b> para treinar.</p></details>
       <details class="rv"><summary>Tem altura mínima e exigência de CNH?</summary><p>Sim. Altura mínima de 1,60 m para homens e 1,55 m para mulheres, e CNH categoria AB, comprovada na posse.</p></details>
       <details class="rv"><summary>Qual é a banca do concurso?</summary><p>O Instituto IDIB foi formalmente oficializado para organizar o 1º concurso da Guarda Civil Municipal de Angra dos Reis.</p></details>
       <details class="rv"><summary>Existe limite de idade?</summary><p>Não há limite máximo de idade. É preciso apenas ter 18 anos ou mais.</p></details>
