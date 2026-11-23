@@ -174,31 +174,6 @@ h1 .g,h2 .g{font-weight:800}
 @media (max-width:1080px){.ed-grid,.dgrid{grid-template-columns:repeat(2,1fr)}.ed-head{grid-template-columns:1fr}.ed-count{justify-content:flex-start}}
 @media (max-width:600px){.ed-grid{grid-template-columns:1fr}.ed-i.w2{grid-column:auto}.dgrid{gap:10px}.dsc{min-height:170px;padding:18px 16px}.dsc h3{font-size:17px;margin-top:18px}.dsc p{display:none}.ed-count div{min-width:0;flex:1}.ed-count strong{font-size:34px}}
 
-
-/* ---------- CARD BLACK ANUAL (revelado na live) ---------- */
-.blk{margin-top:60px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center;position:relative;overflow:hidden;border-radius:30px;padding:clamp(26px,4vw,44px);background:radial-gradient(600px 300px at 100% 0%,rgba(255,74,38,.28),transparent 60%),linear-gradient(160deg,#141520,#050608);color:#fff;border:1px solid rgba(255,162,31,.45);box-shadow:0 0 0 6px rgba(255,162,31,.07),0 50px 90px -40px rgba(208,16,26,.65)}
-.blk::before{content:"BLACK";position:absolute;right:-20px;bottom:-60px;font-size:clamp(120px,18vw,220px);font-weight:900;letter-spacing:-.06em;color:rgba(255,255,255,.035);pointer-events:none}
-.blk-tag{display:inline-flex;align-items:center;gap:8px;background:#000;border:1px solid var(--orange);color:var(--gold);font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.1em;padding:6px 12px;border-radius:999px;margin-bottom:16px}
-.blk h2{font-size:clamp(30px,4vw,48px);color:#fff;margin-bottom:12px}
-.blk-l p{color:#c9cbd3;max-width:480px;margin-bottom:18px}
-.blk-l p b{color:#fff}
-.blk ul{list-style:none;display:grid;gap:9px}
-.blk li{display:flex;gap:10px;font-size:15px;color:#d7d9e0}
-.blk li svg{width:17px;height:17px;flex:none;color:#3ee07c;margin-top:2px}
-.blk-r{position:relative;text-align:center;background:rgba(0,0,0,.55);border:1px dashed rgba(255,162,31,.55);border-radius:24px;padding:28px 22px}
-.blk-lock{width:54px;height:54px;margin:0 auto 10px;border-radius:16px;background:var(--grad-btn);display:grid;place-items:center;color:#1a0700;box-shadow:0 12px 30px -10px rgba(255,74,38,.8);animation:blkLock 2.4s ease-in-out infinite}
-.blk-lock svg{width:26px;height:26px}
-.blk-r small{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
-.blk-price{margin:6px 0 10px;font-size:clamp(60px,7vw,84px);font-weight:900;letter-spacing:-.04em;line-height:1}
-.blk-price sup{font-size:.3em;vertical-align:top;position:relative;top:.45em;margin-right:4px;color:var(--gray)}
-.blk-price span{display:inline-block;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;filter:blur(7px);animation:blkBlur 3s ease-in-out infinite;user-select:none}
-.blk-date{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#d7d9e0;margin-bottom:20px}
-.blk-date svg{width:16px;height:16px;color:var(--orange)}
-.blk-date b{color:var(--gold)}
-.blk-r .btn{width:100%;justify-content:center}
-@keyframes blkLock{50%{transform:rotate(-8deg) scale(1.06)}}
-@keyframes blkBlur{50%{filter:blur(5px)}}
-@media (max-width:900px){.blk{grid-template-columns:1fr}}
 /* ---------- XBAND (ficha) ---------- */
 .xband{background:#07080c;border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;z-index:2}
 .xband .wrap{display:grid;grid-template-columns:repeat(6,1fr)}
@@ -1067,28 +1042,6 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
       <a class="btn" href="https://pay.hub.la/hyEf9XFvlnxa8eYv6KJ2?utm_source=organico&amp;utm_medium=site&amp;utm_campaign=gcm-angra" target="_blank" rel="noopener"><span class="ic"><svg><use href="#i-shield"/></svg></span>QUERO GARANTIR MINHA VAGA</a>
       <div class="pays"><span>PIX</span><span>VISA</span><span>MASTERCARD</span><span>ELO</span></div>
       <div class="trust"><span><svg><use href="#i-lock"/></svg>Compra segura</span><span><svg><use href="#i-bolt"/></svg>Acesso imediato</span><span><svg><use href="#i-shield"/></svg>Garantia de 7 dias</span></div>
-    </div>
-  </div>
-
-  <div class="wrap">
-    <div class="blk rv" id="black-anual">
-      <div class="blk-l">
-        <span class="blk-tag"><span class="dot"></span>REVELAÇÃO AO VIVO · LIVE 24/11</span>
-        <h2>Oferta <span class="g">Black Anual</span></h2>
-        <p>Uma condição especial da Black que <b>só será revelada na live anual de Black</b> do Prof. Ismael Souto. O valor fica em segredo até a live.</p>
-        <ul>
-          <li><svg><use href="#i-check"/></svg>Revelada só para quem estiver na live</li>
-          <li><svg><use href="#i-check"/></svg>Condição exclusiva da Black</li>
-          <li><svg><use href="#i-check"/></svg>Anunciada ao vivo pelo Prof. Ismael</li>
-        </ul>
-      </div>
-      <div class="blk-r">
-        <div class="blk-lock"><svg><use href="#i-lock"/></svg></div>
-        <small>Valor da oferta</small>
-        <div class="blk-price" aria-label="Valor revelado na live"><sup>R$</sup><span>???</span></div>
-        <div class="blk-date"><svg><use href="#i-cal"/></svg>Revelado na live de <b>24/11</b></div>
-        <a class="btn" href="https://links.institutosouto.com.br/angra-captacao" target="_blank" rel="noopener"><span class="ic"><svg><use href="#i-bolt"/></svg></span>Quero ver a revelação</a>
-      </div>
     </div>
   </div>
 
