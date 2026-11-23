@@ -1039,7 +1039,7 @@ addEventListener('load',function(){setTimeout(go,2500)});})();
         <li><svg><use href="#i-check"/></svg>Atualização gratuita pós-edital</li>
       </ul>
       <p class="pproof"><b>+4.000 alunos</b> aprovados com o Prof. Ismael!</p>
-      <a class="btn" href="https://pay.hub.la/hyEf9XFvlnxa8eYv6KJ2" target="_blank" rel="noopener"><span class="ic"><svg><use href="#i-shield"/></svg></span>QUERO GARANTIR MINHA VAGA</a>
+      <a class="btn" href="https://pay.hub.la/hyEf9XFvlnxa8eYv6KJ2?utm_source=organico&amp;utm_medium=site&amp;utm_campaign=gcm-angra" target="_blank" rel="noopener"><span class="ic"><svg><use href="#i-shield"/></svg></span>QUERO GARANTIR MINHA VAGA</a>
       <div class="pays"><span>PIX</span><span>VISA</span><span>MASTERCARD</span><span>ELO</span></div>
       <div class="trust"><span><svg><use href="#i-lock"/></svg>Compra segura</span><span><svg><use href="#i-bolt"/></svg>Acesso imediato</span><span><svg><use href="#i-shield"/></svg>Garantia de 7 dias</span></div>
     </div>
@@ -1349,5 +1349,30 @@ setTimeout(()=>{showToast();setInterval(showToast,9000)},4000);
 </script>
 <!-- Hubla: rastreamento de UTMs (tag da conta, vale para todas as paginas) -->
 <script src="https://data.hub.la/hub.min.js?wk=wk_ge7WD9tOLUSjFyTnQ2jzczczeEO2" defer></script>
+<!-- Checkout Hubla: repassa UTMs/fbclid da URL; sem origem usa organico/site (nunca "teste") -->
+<script>
+(function(){
+  var KEYS=/^(utm_[a-z_]+|fbclid|gclid|ttclid|sck|src|xcod)$/i,K='is_trk',p={};
+  try{p=JSON.parse(sessionStorage.getItem(K)||'{}')}catch(e){}
+  new URLSearchParams(location.search).forEach(function(v,k){if(KEYS.test(k)&&v)p[k]=v});
+  try{sessionStorage.setItem(K,JSON.stringify(p))}catch(e){}
+  var DEF={utm_source:'organico',utm_medium:'site',utm_campaign:'gcm-angra'};
+  function bad(v){return !v||/^teste/i.test(v)}
+  function fix(a){
+    if(!a||!a.href)return;
+    try{var u=new URL(a.href);if(!/(^|\.)hub\.la$/.test(u.hostname))return;
+      for(var k in p)u.searchParams.set(k,p[k]);
+      u.searchParams.forEach(function(v,k){if(/^utm_/i.test(k)&&bad(v)&&!p[k])u.searchParams.delete(k)});
+      for(var d in DEF){if(bad(u.searchParams.get(d)))u.searchParams.set(d,DEF[d])}
+      if(a.href!==u.toString())a.href=u.toString();
+    }catch(e){}
+  }
+  function all(){document.querySelectorAll('a[href*="hub.la"]').forEach(fix)}
+  ['pointerdown','click','auxclick','contextmenu','focusin'].forEach(function(ev){
+    document.addEventListener(ev,function(e){fix(e.target.closest&&e.target.closest('a[href]'))},true);
+  });
+  all();window.addEventListener('load',function(){all();setTimeout(all,1500)});
+})();
+</script>
 </body>
 </html>
